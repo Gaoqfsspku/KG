@@ -10,6 +10,7 @@ Neo4j安装：https://neo4j.com/download-center/
  
 
 Neo4j增删改查：
+
 增：
 增加一个节点
 create (n:Person {name:'我',age:31})
