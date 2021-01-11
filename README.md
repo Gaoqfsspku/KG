@@ -15,12 +15,14 @@ Neo4j增删改查：
 create (n:Person {name:'我',age:31})
 带有关系属性
 create (p:Person{name:"我",age:"31"})-[:包工程{金额:10000}]->(n:Person{name:"好大哥",age:"35"})
+
 删
 create (n:Person {name:'TYD',age:31})
 match (n:Person{name:"TYD"}) delete n
 删除关系
 match (p:Person{name:"我",age:"31"})-[f:包工程]->(n:Person{name:"好大哥",age:"35"})
  delete f
+
 改：
 加上标签
 match (t:Person) where id(t)=789 set t:好人return t
@@ -28,6 +30,7 @@ match (t:Person) where id(t)=789 set t:好人return t
 match (a:好人) where id(a)=789 set a.战斗力=200 return a
 修改属性
 match (a:好人) where id(a)=789 set a.战斗力=500 return a
+
 查：(查操作太多啦，直接参考neo4j例子就好)
 match (p:Person) - [:包工程] -> (n:Person) return p,n
 
